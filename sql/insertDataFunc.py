@@ -8,9 +8,9 @@ class InsertDB:
     def __init__(self, table_name):
 
         self.table_name = table_name
-        self.connection = pymysql.connect(host='106.54.196.44',
+        self.connection = pymysql.connect(host='host',
                                      user='root',
-                                     password='xsj26875676',
+                                     password='passwd',
                                      db='test',
                                      charset='utf8mb4',
                                      cursorclass=pymysql.cursors.DictCursor)
