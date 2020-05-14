@@ -1,7 +1,7 @@
 import pymysql.cursors
 
 # Connect to the database
-connection = pymysql.connect(host='106.54.196.44',
+connection = pymysql.connect(host='host',
                              user='root',
                              password='passwd',
                              db='web',
