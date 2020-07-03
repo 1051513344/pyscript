@@ -1,6 +1,11 @@
 import pymysql.cursors
 
-
+"""
+    查询数据库
+    queryAll  查询所有
+    queryById 根据id查询
+    queryByCondition  根据条件查询
+"""
 class QueryDB:
 
     def __init__(self, table_name):
