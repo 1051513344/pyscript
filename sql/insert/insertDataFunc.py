@@ -1,8 +1,12 @@
 import pymysql.cursors
 import random
 
-
-
+"""
+    批量插入随机数据到数据库中
+    table_name = "worker"    # 表名
+    i = InsertDB(table_name) # 实例化
+    i.execute(500)           # 插入随机数据500条
+"""
 class InsertDB:
 
     def __init__(self, table_name):
@@ -63,7 +67,7 @@ class InsertDB:
                 # email = '123456789@{}.com'.format(random.choice(["qq", "wx", "zxc", "xl"]))
                 # # 时间戳
                 # time = '158397{}'.format(random.randint(1000, 9999))
-
+                # TODO 根据数据库表的列数插入对应的数据
                 self.insert(cursor, i, work_id, department, name, age, sex)
 
         self.connection.commit()
