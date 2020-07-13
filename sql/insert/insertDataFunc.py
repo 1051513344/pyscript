@@ -20,10 +20,10 @@ class InsertDB:
                                      cursorclass=pymysql.cursors.DictCursor)
 
 
-    def insert(self, cursor, *args):
+    def insert(self, cursor, db_name,  *args):
 
         # Create a new record
-        cursor.execute("select COLUMN_NAME from information_schema.COLUMNS  where table_name = '{}'".format(self.table_name))
+        cursor.execute("select COLUMN_NAME from information_schema.COLUMNS  where table_name = '{}' and TABLE_SCHEMA='{}'".format(self.table_name, db_name))
         result = cursor.fetchall()
         columns = str(tuple([i["COLUMN_NAME"] for i in result])).replace("'", "")
 
@@ -68,7 +68,7 @@ class InsertDB:
                 # # 时间戳
                 # time = '158397{}'.format(random.randint(1000, 9999))
                 # TODO 根据数据库表的列数插入对应的数据
-                self.insert(cursor, i, work_id, department, name, age, sex)
+                self.insert(cursor, "test", i, work_id, department, name, age, sex)
 
         self.connection.commit()
 

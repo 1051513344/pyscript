@@ -5,16 +5,19 @@ import pymysql.cursors
     queryAll  查询所有
     queryById 根据id查询
     queryByCondition  根据条件查询
+    queryTableMetaData 查询表的所有字段
 """
 class QueryDB:
 
-    def __init__(self, table_name):
+    def __init__(self, host, port, user, password, db, charset,
+                 table_name):
         self.table_name = table_name
-        self.connection = pymysql.connect(host='host',
-                                          user='root',
-                                          password='psswd',
-                                          db='test',
-                                          charset='utf8mb4',
+        self.connection = pymysql.connect(host=host,
+                                          port=port,
+                                          user=user,
+                                          password=password,
+                                          db=db,
+                                          charset=charset,
                                           cursorclass=pymysql.cursors.DictCursor)
     def queryAll(self):
         try:
@@ -50,6 +53,16 @@ class QueryDB:
         finally:
             self.connection.close()
         return result
+
+    def queryTableMetaData(self):
+        try:
+            with self.connection.cursor() as cursor:
+                sql = "select COLUMN_NAME from information_schema.COLUMNS  where table_name = '{}' and TABLE_SCHEMA='{}'".format(self.table_name, db)
+                cursor.execute(sql)
+                result = cursor.fetchall()
+        finally:
+            self.connection.close()
+        return [r.get('COLUMN_NAME') for r in result]
 
 
 

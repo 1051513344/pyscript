@@ -10,7 +10,7 @@ def exportExcel(fileName, thead, list):
     """
     data = []
     data.append(thead)
-    with open('{}.csv'.format(fileName), 'a', newline='') as f:
+    with open('{}.csv'.format(fileName), 'a', newline='', encoding='utf-8') as f:
         for i in list:
             data.append(i)
         # 实例化csv写数据对象

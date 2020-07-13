@@ -1,6 +1,6 @@
 import pymysql.cursors
 
-from sql.query.queryData import QueryDB
+from sql.query.queryDataFunc import QueryDB
 
 """
     更新数据库
