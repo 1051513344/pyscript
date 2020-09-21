@@ -19,10 +19,16 @@ class QueryDB:
                                           db=db,
                                           charset=charset,
                                           cursorclass=pymysql.cursors.DictCursor)
-    def queryAll(self):
+    def queryAll(self, start=None, end=None):
+        """
+        例 start=0 end=100 从0开始数100条
+        """
+        limit = ""
+        if (start is not None) and (end is not None):
+            limit = "limit {} offset {}".format(end, start)
         try:
             with self.connection.cursor() as cursor:
-                sql = "SELECT * FROM {}".format(self.table_name)
+                sql = "SELECT * FROM {} {}".format(self.table_name, limit)
                 cursor.execute(sql)
                 result = cursor.fetchall()
         finally:

@@ -9,18 +9,19 @@ import random
 """
 class InsertDB:
 
-    def __init__(self, table_name):
+    def __init__(self, host, port, user, password, db, charset, table_name):
 
         self.table_name = table_name
-        self.connection = pymysql.connect(host='host',
-                                     user='root',
-                                     password='passwd',
-                                     db='test',
-                                     charset='utf8mb4',
+        self.connection = pymysql.connect(host=host,
+                                     port=port,
+                                     user=user,
+                                     password=password,
+                                     db=db,
+                                     charset=charset,
                                      cursorclass=pymysql.cursors.DictCursor)
 
 
-    def insert(self, cursor, db_name,  *args):
+    def insert(self, cursor, db_name, *args):
 
         # Create a new record
         cursor.execute("select COLUMN_NAME from information_schema.COLUMNS  where table_name = '{}' and TABLE_SCHEMA='{}'".format(self.table_name, db_name))
@@ -35,23 +36,41 @@ class InsertDB:
         vx = vx[:-2]
         vx = vx + ")"
 
-
-
-
         sql = "INSERT INTO " \
-              "`worker` " \
+              "`{}` " \
               "{} " \
               "VALUES " \
-              "{}".format(columns, vx)
+              "{}".format(self.table_name, columns, vx)
 
-        arg_list = []
-        for arg in args:
-            arg_list.append(arg)
+        cursor.execute(sql, args)
 
-        cursor.execute(sql, tuple(arg_list))
+    # 批量插入
+    def batchInsert(self, list):
+        with self.connection.cursor() as cursor:
+            for i in list:
+                id = i.get("id")
+                title = i.get("title")
+                content = i.get("content")
+                read_times = i.get("read_times")
+                comment_times = i.get("comment_times")
+                type_id = i.get("type_id")
+                blogger_id = i.get("blogger_id")
+                create_time = i.get("create_time")
+                update_time = i.get("update_time")
+                zan = i.get("zan")
+                hot = i.get("hot")
+                type = i.get("type")
+                is_delete = i.get("is_delete")
+                self.insert(cursor, "ssm_blog",
+                            id, title, content, read_times, comment_times, type_id,
+                            blogger_id, create_time, update_time, zan, hot, type,
+                            is_delete)
 
+        self.connection.commit()
+        self.connection.close()
+
+    # 批量随机插入
     def execute(self, insert_num):
-
         with self.connection.cursor() as cursor:
             for i in range(1, insert_num + 1):
                 print("正在插入 第{}条......".format(i))
@@ -71,7 +90,6 @@ class InsertDB:
                 self.insert(cursor, "test", i, work_id, department, name, age, sex)
 
         self.connection.commit()
-
         self.connection.close()
 
 
