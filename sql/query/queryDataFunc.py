@@ -63,7 +63,7 @@ class QueryDB:
     def queryTableMetaData(self):
         try:
             with self.connection.cursor() as cursor:
-                sql = "select COLUMN_NAME from information_schema.COLUMNS  where table_name = '{}' and TABLE_SCHEMA='{}'".format(self.table_name, db)
+                sql = "select COLUMN_NAME from information_schema.COLUMNS  where table_name = '{}' and TABLE_SCHEMA='{}'".format(self.table_name, self.connection.db.decode())
                 cursor.execute(sql)
                 result = cursor.fetchall()
         finally:
