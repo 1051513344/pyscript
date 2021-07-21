@@ -3,11 +3,11 @@ from sql.query.queryDataFunc import QueryDB
 
 if __name__ == "__main__":
 
-    host = "host"
-    port = 3306
-    user = "root"
-    password = "password"
-    db = "db"
+    host = "sh-cdb-7hgrxn00.sql.tencentcdb.com"
+    port = 63084
+    user = "cccf_wxapp_czd"
+    password = "AFeZk7BMcLMYmpDe"
+    db = "cccf_prod"
     charset = "utf8mb4"
     table_name = "t_iw_doctor"
 
