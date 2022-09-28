@@ -70,6 +70,14 @@ class QueryDB:
             self.connection.close()
         return [r.get('COLUMN_NAME') for r in result]
 
+    def queryByCustom(self, sql):
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql)
+                result = cursor.fetchall()
+        finally:
+            self.connection.close()
+        return result
 
 
 if __name__ == "__main__":

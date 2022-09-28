@@ -42,10 +42,11 @@ class UpdateDB:
         cursor.execute(sql)
 
     # 批量更新
-    def batchUpdate(self, id, content):
+    def batchUpdate(self, id, show_end_time):
         with self.connection.cursor() as cursor:
-            self.update(cursor, id, content=content)
+            self.update(cursor, id, show_end_time=show_end_time)
 
+    def colse(self):
         self.connection.commit()
         self.connection.close()
 
