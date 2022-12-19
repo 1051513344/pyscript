@@ -8,27 +8,75 @@ def to_camelcase(name: str) -> str:
 data_type_dict = {
     '字符型': 'String',
     '数值型': 'Integer',
-    '日期型': 'Date'
+    '日期型': 'String'
 }
 
 
 if __name__ == "__main__":
-    pass
+
 
     param_info = """
-mdtrt_cert_type	就诊凭证类型	字符型
-mdtrt_cert_no	就诊凭证编号	字符型
-orgin_card_info	读卡原始信息	字符型
-sign	读卡签名	字符型
-card_sn	卡识别码	字符型
-begntime	开始时间	日期型
-psn_cert_type	人员证件类型	字符型
-certno	证件号码	字符型
-psn_name	人员姓名	字符型
+feedetl_sn	费用明细流水号	字符型
+psn_no	人员编号	字符型
+mdtrt_id	就诊ID	字符型
+chrg_bchno	收费批次号	字符型
+rxno	处方号	字符型
+rx_circ_flag	外购处方标志	字符型
+fee_ocur_time	费用发生日期	日期型
+cnt	数量	数值型
+pric	单价	数值型
+det_item_fee_sumamt	明细项目费用总额	数值型
+sin_dos_dscr	单次剂量描述	字符型
+used_frqu_dscr	使用频次描述	字符型
+prd_days	用药周期天数	数值型
+medc_way_dscr	用药途径描述	字符型
+med_list_codg	医疗目录编码	字符型
+medins_list_codg	医疗机构目录编码	字符型
+bilg_dept_codg	开单科室编码	字符型
+bilg_dept_name	开单科室名称	字符型
+bilg_dr_codg	开单医生编码	字符型
+bilg_dr_name	开单医生姓名	字符型
+acord_dept_codg	受单科室编码	字符型
+acord_dept_name	受单科室名称	字符型
+orders_dr_code	受单医生编码	字符型
+orders_dr_name	受单医生姓名	字符型
+hosp_appr_flag	医院审批标志	字符型
+tcmdrug_used_way	中药使用方式	字符型
+etip_flag	外检标志	字符型
+etip_hosp_code	外检医院编码	字符型
+dscg_tkdrug_flag	出院带药标志	字符型
+matn_fee_flag	生育费用标志	字符型
+unchk_flag	不进行审核标志	字符型
+unchk_memo	不进行审核说明	字符型
+medins_list_name	医疗机构目录名称	字符型
     """
     require_info = """
 Y
 Y
+Y
+
+
+Y
+Y
+Y
+Y
+Y
+
+
+
+
+Y
+Y
+Y
+Y
+Y
+Y
+
+
+
+
+
+
 
 
 
