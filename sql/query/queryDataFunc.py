@@ -70,6 +70,20 @@ class QueryDB:
             self.connection.close()
         return [r.get('COLUMN_NAME') for r in result]
 
+    def queryTableMetaDataDict(self, table_names):
+        tableNames = "("
+        for table_name in table_names:
+            tableNames = tableNames + "'" + table_name + "',"
+        tableNames = tableNames[:-1] + ")"
+        try:
+            with self.connection.cursor() as cursor:
+                sql = "select COLUMN_NAME, COLUMN_COMMENT from information_schema.COLUMNS  where table_name in {} and TABLE_SCHEMA = '{}'".format(tableNames, self.connection.db.decode())
+                cursor.execute(sql)
+                result = cursor.fetchall()
+        finally:
+            self.connection.close()
+        return result
+
     def queryByCustom(self, sql):
         try:
             with self.connection.cursor() as cursor:
