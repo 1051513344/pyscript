@@ -132,20 +132,6 @@ class QueryDB:
 
 
 if __name__ == "__main__":
-
-    # 查询所有
-    table_name = "message_template"
-    q = QueryDB(table_name)
-    print(q.queryAll())
-
-    # 根据id查询
-    table_name = "message_template"
-    q2 = QueryDB(table_name)
-    print(q2.queryById("10"))
-
-    # 根据条件查询
-    table_name = "message_template"
-    q3 = QueryDB(table_name)
-    print(q3.queryByCondition(hospital_id="1118011814561100810", union_id="130123"))
+    pass
 
 
