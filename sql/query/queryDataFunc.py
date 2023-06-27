@@ -6,6 +6,8 @@ import pymysql.cursors
     queryById 根据id查询
     queryByCondition  根据条件查询
     queryTableMetaData 查询表的所有字段
+    queryTableMetaDataDict 查询表的所有字段及解释
+    queryByCustom 自定义sql查询
 """
 class QueryDB:
 
@@ -59,16 +61,33 @@ class QueryDB:
             self.connection.close()
         return result
 
-    def queryByCondition(self, **kwargs):
+    def queryByCondition(self, limit_, _limit, orderBy, order, *args, **kwargs):
         self.connect()
         try:
             with self.connection.cursor() as cursor:
-                initSql = "SELECT * FROM {} WHERE ".format(self.table_name)
+                if args is not None and args != []:
+                    selectColumns = ",".join(args)
+                    initSql = "SELECT {} FROM {} ".format(selectColumns, self.table_name)
+                else:
+                    initSql = "SELECT * FROM {} ".format(self.table_name)
                 tempSql = ""
-                for key, value in zip(kwargs.keys(), kwargs.values()):
-                    tempSql = tempSql + "`" + key + "`" + " = \"" + str(value) + "\" and "
-                tempSql = tempSql[:-4]
+                if kwargs is not None and kwargs != {}:
+                    initSql = initSql + " WHERE "
+                    for key, value in zip(kwargs.keys(), kwargs.values()):
+                        tempSql = tempSql + "`" + key + "`" + " = \"" + str(value) + "\" and "
+                    tempSql = tempSql[:-4]
+                if orderBy is not None:
+                    tempSql = tempSql + f"order by {orderBy} "
+                if order is not None:
+                    tempSql = tempSql + order + " "
+                if limit_ is not None and _limit is not None:
+                    tempSql = tempSql + f"limit {limit_}, {_limit} "
+                if limit_ is None and _limit is not None:
+                    tempSql = tempSql + f"limit {_limit} "
+                if limit_ is not None and _limit is None:
+                    tempSql = tempSql + f"limit {limit_} "
                 sql = initSql + tempSql
+                print(sql)
                 cursor.execute(sql)
                 result = cursor.fetchall()
         finally:
