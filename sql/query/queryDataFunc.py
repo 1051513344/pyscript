@@ -65,7 +65,7 @@ class QueryDB:
         self.connect()
         try:
             with self.connection.cursor() as cursor:
-                if args is not None and args != []:
+                if args is not None and args != ():
                     selectColumns = ",".join(args)
                     initSql = "SELECT {} FROM {} ".format(selectColumns, self.table_name)
                 else:
