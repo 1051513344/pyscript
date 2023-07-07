@@ -1,10 +1,10 @@
 
 
 
-with open("ResidentStudentVo.java", "r", encoding="utf-8") as f:
+with open("bean/ResidentStudentVo.java", "r", encoding="utf-8") as f:
     Vo = f.read()
 
-with open("TurnInterStdPlan.java", "r", encoding="utf-8") as f:
+with open("bean/TurnInterStdPlan.java", "r", encoding="utf-8") as f:
     Do = f.read()
 
 VoDict = {}

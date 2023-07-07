@@ -2,11 +2,11 @@
 
 mybatis_log = """
 
-EXEC [dbo].[P_EcsOne_exportMarketServiceOrder] @companyCode = ?, @moduleCode = ?, @staffCode = ?, @queryStaffCode = ?, @maintenanceCodeList = '', @plantCode = ?, @statusCode = ?, @tranType = ?, @tranCode = ?, @assetCode = ?, @outletNo = ?, @outletName = ?, @technologyType = ?, @startDate = ?, @endDate = ?, @pageIndex = ?, @pageSize = ?, @status = ?, @message = ?
+EXEC [dbo].[P_EcsOne_getServiceOrderList] @source = 'SEC', @comapnyCode = ?, @staffCode = ?, @tranStatus = ?, @tranType = ?, @tranCode = ?, @assetCode = ?, @outletNo = ?, @outletName = ?, @operationFlag = ?, @plantCode = ?, @maintenanceCodeList = ?, @startDate = ?, @endDate = ?, @pageIndex = ?, @pageSize = ?, @platform = ?, @techonlogyType = ?, @status = ?, @message = ?  
 
 """
 
-params = "3006(String), (String), (String), (String), 3006(String), 2(String), (String), (String), (String), (String), (String), (String), 2022-10-01(String), 2022-10-31(String), 1(Integer), 20000(Integer)"
+params = "3039(String), JXSFS001(String), 1(Integer), (String), (String), (String), 1111111111(String), (String), 0(String), (String), JXSFS001(String), 2023-03-01(String), 2023-03-31(String), 1(Integer), 50(Integer), 1(Integer), (String)"
 
 sql_segement = mybatis_log.split("?")
 print(len(sql_segement))
