@@ -1,0 +1,1 @@
+{"longOnceFlag":"LONG","patientId":"535888","series":1,"supplyCodes":["3","SX","4","01","A04","11","A02","A03","A06","a","A01","15","18","42"],"mrn":"23038447","orderClassList":["b","a"],"status":"USING"}
