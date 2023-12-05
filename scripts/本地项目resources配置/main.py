@@ -11,8 +11,8 @@ if __name__ == "__main__":
     dataConfigPath = "D:\DataConfig"
     projectPath = "D:\workspace"
     # -------------------------------------------更改项--------------------------------------------------- #
-    contextPath = "NIS_TianjinZYeryuan"  # tomcat 老项目须手动指定context
-    projectName = "宁化县总医院移动护理"
+    contextPath = "NIS_CDsanyuan"  # tomcat 老项目须手动指定context
+    projectName = "成都市第三人民医院移动护理（待验收）"
     # -------------------------------------------更改项--------------------------------------------------- #
 
     DataConfig = dataConfigPath + "\\" + contextPath
