@@ -11,12 +11,13 @@ if __name__ == "__main__":
     dataConfigPath = "D:\DataConfig"
     projectPath = "D:\workspace"
     # -------------------------------------------更改项--------------------------------------------------- #
-    contextPath = "NIS_Zhangdianrenmin"  # tomcat 老项目须手动指定context
-    projectName = "淄博市张店区人民医院-移动护理"
+    contextPath = "NIS_XMzhongshan"  # tomcat 老项目须手动指定context
+    projectName = "厦门大学附属中山医院移动护理升级"
     # -------------------------------------------更改项--------------------------------------------------- #
 
     DataConfig = dataConfigPath + "\\" + contextPath
     server = projectPath + "\\" + projectName + "\\" + "server"
+    server = server if os.path.exists(server) else projectPath + "\\" + projectName + "\\" + "server_6.0"
     resources = server + "\\" + contextPath + "\src\main\\resources\\resources.properties"
     resources = resources if os.path.exists(resources) else server + "\src\main\\resources\\resources.properties"
     resources = resources if os.path.exists(resources) else server + "\\NIS_SE_admin\\src\main\\resources\\resources.properties"
@@ -58,18 +59,26 @@ if __name__ == "__main__":
                         for line in resources_properties.split("\n"):
                             if line.startswith("spring.datasource.url="):
                                 f.write("spring.datasource.url=jdbc:oracle:thin:@192.168.10.239:1521:orcl\n")
+                            elif line.startswith("url="):
+                                f.write("url=jdbc:oracle:thin:@192.168.10.239:1521:orcl\n")
                             elif line.startswith("spring.redis.host="):
                                 f.write("spring.redis.host=127.0.0.1\n")
                             elif line.startswith("spring.redis.port="):
                                 f.write("spring.redis.port=7191\n")
                             elif line.startswith("spring.redis.password="):
                                 f.write("spring.redis.password=XFQQ\n")
+                            elif line.startswith("redisHost="):
+                                f.write("redisHost=127.0.0.1\n")
+                            elif line.startswith("redisPort="):
+                                f.write("redisPort=7191\n")
+                            elif line.startswith("redisPassword="):
+                                f.write("redisPassword=XFQQ\n")
                             else:
                                 f.write(line+"\n")
 
     # 更改PC指向地址
     # -------------------------------------------更改项--------------------------------------------------- #
-    serverPort = "8810"
+    serverPort = "8811"
     # -------------------------------------------更改项--------------------------------------------------- #
     projectRootPath = projectPath + "\\" + projectName
     PCpath = ""
@@ -82,20 +91,24 @@ if __name__ == "__main__":
         if os.path.exists(PCexePath):
             MCSPC_xml = PCexePath+"\\" + "MCSPC.xml"
             if os.path.exists(MCSPC_xml):
-                with open(MCSPC_xml, "r", encoding="utf-8-sig") as f:
-                    config_xml = f.read()
-                    find_server_urls = re.findall("<serverUrl>(.*)</serverUrl>", config_xml)
-                    find_auto_update = re.findall("<autoUpdate>.*</autoUpdate>", config_xml)
-                    config_server_url = find_server_urls[0] if len(find_server_urls) > 0 else None
-                    config_auto_update = find_auto_update[0] if len(find_auto_update) > 0 else None
-                    if config_server_url is not None:
-                        config_xml = config_xml.replace(config_server_url, f"http://10.111.1.160:{serverPort}/{contextPath}/")
-                    else:
-                        print("serverUrl配置未找到！")
-                    if config_auto_update is not None:
-                        config_xml = config_xml.replace(config_auto_update, f"<autoUpdate>0</autoUpdate>")
-                    else:
-                        print("autoUpdate配置未找到！")
+                try:
+                    with open(MCSPC_xml, "r", encoding="utf-8-sig") as f:
+                        config_xml = f.read()
+                except Exception as e:
+                    with open(MCSPC_xml, "r", encoding="gb2312") as f:
+                        config_xml = f.read()
+                find_server_urls = re.findall("<serverUrl>(.*)</serverUrl>", config_xml)
+                find_auto_update = re.findall("<autoUpdate>.*</autoUpdate>", config_xml)
+                config_server_url = find_server_urls[0] if len(find_server_urls) > 0 else None
+                config_auto_update = find_auto_update[0] if len(find_auto_update) > 0 else None
+                if config_server_url is not None:
+                    config_xml = config_xml.replace(config_server_url, f"http://10.111.1.160:{serverPort}/{contextPath}/")
+                else:
+                    print("serverUrl配置未找到！")
+                if config_auto_update is not None:
+                    config_xml = config_xml.replace(config_auto_update, f"<autoUpdate>0</autoUpdate>")
+                else:
+                    print("autoUpdate配置未找到！")
                 if config_server_url is not None:
                     shutil.copy(MCSPC_xml, MCSPC_xml.replace("MCSPC.xml", "MCSPC-bak.xml"))
                     with open(MCSPC_xml, "w", encoding="utf-8-sig") as f:

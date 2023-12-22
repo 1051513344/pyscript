@@ -51,7 +51,7 @@ if __name__ == "__main__":
     pwdUtil = execjs.compile(pwdUtil_js)
     timeStamp = pwdUtil.call('getTimeStamp')
     encryptPwd = pwdUtil.call('do_encrypt_rc4', '3997', timeStamp)
-    url = "http://1.1.1.4/ac_portal/login.php"
+    url = "http://192.4.1.10/ac_portal/login.php"
     form_data = {
         "opr": "pwdLogin",
         "userName": "3997",
