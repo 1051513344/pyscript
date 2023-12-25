@@ -11,8 +11,8 @@ if __name__ == "__main__":
     dataConfigPath = "D:\DataConfig"
     projectPath = "D:\workspace"
     # -------------------------------------------更改项--------------------------------------------------- #
-    contextPath = "NIS_XMzhongshan"  # tomcat 老项目须手动指定context
-    projectName = "厦门大学附属中山医院移动护理升级"
+    contextPath = "NIS_NBliuyuan"  # tomcat 老项目须手动指定context
+    projectName = "宁波市第六医院（维保）"
     # -------------------------------------------更改项--------------------------------------------------- #
 
     DataConfig = dataConfigPath + "\\" + contextPath
@@ -78,7 +78,7 @@ if __name__ == "__main__":
 
     # 更改PC指向地址
     # -------------------------------------------更改项--------------------------------------------------- #
-    serverPort = "8811"
+    serverPort = "8080"
     # -------------------------------------------更改项--------------------------------------------------- #
     projectRootPath = projectPath + "\\" + projectName
     PCpath = ""
