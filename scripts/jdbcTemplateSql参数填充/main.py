@@ -1,5 +1,6 @@
 # -*- coding: gbk -*-
 import  json
+import time
 
 with open("参数map.txt", "r", encoding='utf-8') as f:
     paramMap = f.read()
@@ -31,12 +32,20 @@ def parse():
             value = ""
             if isinstance(v, list):
                 value = str(tuple(v)).replace("(", "").replace(")", "")
-            elif "-" and ":" in v:
-                value = f"to_date('{v}' , 'yyyy-mm-dd hh24:mi:ss')"
             elif isinstance(v, str):
-                value = f"'{v}'"
+                if "-" and ":" in v:
+                    value = f"to_date('{v}' , 'yyyy-mm-dd hh24:mi:ss')"
+                else:
+                    value = f"'{v}'"
             else:
-                value = f'{v}'
+                if len(str(v)) >= 11:
+                    try:
+                        value = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(v/1000))
+                        value = f"to_date('{value}' , 'yyyy-mm-dd hh24:mi:ss')"
+                    except Exception as e:
+                        value = f'{v}'
+                else:
+                    value = f'{v}'
             sqlTemplateBuilder = sqlTemplateBuilder.replace(f":{k}", value)
     print(sqlTemplateBuilder)
 
