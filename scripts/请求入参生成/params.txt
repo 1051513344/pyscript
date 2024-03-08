@@ -1,0 +1,13 @@
+userId: c53aa467cb644be98ca4a1f3b3f7a2c1
+userName: 李佳佳
+filterType: 1
+checkTypeId:
+touchDeptId:
+touchWardId:
+latestFormStatus: 2
+releaseStatus: 2
+searchContent:
+unitId:
+unitType:
+pageNum: 1
+pageSize: 20

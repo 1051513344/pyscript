@@ -133,6 +133,7 @@ def run_threaded(job_func):
     job_thread.start()
 
 if __name__ == "__main__":
+    autoKeepWifiConnected()
     schedule.every(60).seconds.do(run_threaded, autoKeepWifiConnected)
     while True:
         schedule.run_pending()

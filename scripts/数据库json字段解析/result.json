@@ -1,0 +1,289 @@
+{
+  "object": {
+    "list": [
+      {
+        "updateTime": null,
+        "createTime": null,
+        "detailListRespDTO": null,
+        "existIssueList": [
+          {
+            "existIssueTotalNum": 193,
+            "existIssueNum": 31,
+            "existIssue": "4.人文关怀或沟通不到位"
+          },
+          {
+            "existIssueTotalNum": 193,
+            "existIssueNum": 30,
+            "existIssue": "3.无菌观念不强"
+          },
+          {
+            "existIssueTotalNum": 193,
+            "existIssueNum": 20,
+            "existIssue": "2.查对漏项"
+          },
+          {
+            "existIssueTotalNum": 193,
+            "existIssueNum": 15,
+            "existIssue": "1.基础护理操作或专科护理操作流程不熟练"
+          },
+          {
+            "existIssueTotalNum": 193,
+            "existIssueNum": 9,
+            "existIssue": "其他"
+          }
+        ],
+        "operationUserId": null,
+        "operationUserOrg": null,
+        "validFlagString": null,
+        "validFlagInteger": null,
+        "updateId": null,
+        "createId": null,
+        "reduceScoreReasons": "吸氧后人文关怀不到位,查对漏项,加药时跨越无菌区,人文关怀不到位,操作后未再次查对,皮下注射时，操作目的，操作方法，注意事项等讲解不到位,吉尔碘瓶盖使用后未扣紧,未告知患者输入药物名称及作用,37床患者手指甲长,用过的止血带在治疗盘里放着，为处理。,心肺复苏按压深度不到位。,操作流程不熟练,专科护理操作：无菌密闭静脉输液，操作中没有再次核对病人名字。,酒精过期,静脉输液时未告知患者液体的名称及作用,对患者关心不够,查对漏项，加药不全。,微量泵用药漏扫码。,查对不认真，摆药错误。,输液时消毒面积小。,吸氧观察卡未及时签名。,无菌持物筒内有两把持物钳，打包后未及时撤出一把,手卫生执行不到位，临床工作中洗手的五个时机未按照标准洗手,沾过吉尔碘的棉签未垂直使用,留置针的肝素帽连接头皮针悬挂于患者输液器装置上,吉尔碘盖子未扣紧,开启的棉签未及时填写开启日期。,吸痰前未进行沟通。,重复使用止血带,操作前未洗手,基础护理操作中成人无菌导尿中，操作中没有再次核对患者姓名,操作时无菌观念不强,未核对床头卡,扎针时消毒一次,消毒患者颈内静脉管范围不够,心电监护操作结束后人文关怀不到位。,静脉输液时有漏洗手,抽血忘记进行PDA扫码送检。,患者输液外渗沟通及人为关怀不到位。,扎针时消毒不严格,未告诉患者拔管注意事项,给患者备皮时人文关怀不到位，未注意遮挡。,沟通缺乏关怀。,语气应柔和，缓慢。,加药无菌观念不强，玻璃瓶加完药未粘贴瓶口贴,给患者静脉输液时，止血带放治疗盘里。,未核对患者姓名,未反问式核对,更换PICC无菌观念不强,沟通不到位。,未向病人解释操作目的,遵医嘱使用心电监护只反问式提问患者，未核对患者腕带信息。,人文关怀欠佳,除颤仪操作流程不熟练,操作静脉输血，无菌观念欠佳，操作中跨越无菌区,操作中解释工作不到位",
+        "sort": null,
+        "scoreContents": "2.查对漏项,3.无菌观念不强,4.人文关怀或沟通不到位,1.基础护理操作或专科护理操作流程不熟练,其他",
+        "wardNames": "结核内科三病区,胸外科一/乳腺甲状腺病区,GICU护士站,肿瘤内科病区,心血管内科六病区,结核内科五病区,CSICU病区,康复科1-2/中医科病区（南）,全科耳鼻咽喉科护士站(南),心血管外科八病区,呼吸与危重症五护士站(西),心血管内科一/二病区(南),结核内科六/危重症病区,心血管内科九/十病区,结核内科七护士站,胸外科六/胸部肿瘤科病区,介入手术室1,结核内科七病区,心血管外科一病区,全科耳鼻咽喉科病区(南),结核内科二病区,心血管外科七/十一护士站,骨科普外病区,手术部2,心血管内科一/二护士站(南),心血管内科六护士站,GICU病区,心血管外科四/九病区,呼吸与危重症五病区(西),消毒供应中心,胸外科五/微创护士站,结核内科一护士站,呼吸与危重症二护士站(西),心血管外科四/九护士站,胸外科一/乳腺甲状腺护士站,心血管外科八护士站,结核内科一病区,心血管内科一/十一病区,心血管外科七/十一病区,CCU病区,结核内科二护士站,中医科/康复医学科病区,呼吸与危重症一病区(西),结核内科六/危重症护士站,胸外科六/胸部肿瘤科护士站,内分泌消化科护士站,心血管外科二/五病区,胸外科五/微创病区,外科眼科妇科病区(南),GICU2病区,胸外科二病区,内分泌消化科病区",
+        "detailAttributes": null,
+        "averageScore": "96.05%",
+        "issueRate": "41.97%",
+        "patCount": null,
+        "allTimes": 193,
+        "issueTimes": 81,
+        "isTargetAssessment": null,
+        "isKeyProcess": null,
+        "isFirst": null,
+        "checkTypeName": "护理单元自查",
+        "standardCategory": "教学培训",
+        "checkStandardName": "护理教学培训考核检查记录表",
+        "checkStandardId": "91677c50da5e41e196b15bf22a71eb51",
+        "processIndexName": "培训考核",
+        "processIndexId": "2f5f5ef41fcc414c8d7f4767066b3437",
+        "contentName": "4.现场查看责护一项基础护理或专科护理操作。",
+        "contentId": "216c4783442f4f11ad198a4b87594040"
+      },
+      {
+        "updateTime": null,
+        "createTime": null,
+        "detailListRespDTO": null,
+        "existIssueList": [
+          {
+            "existIssueTotalNum": 8,
+            "existIssueNum": 3,
+            "existIssue": "3.无菌观念不强"
+          },
+          {
+            "existIssueTotalNum": 8,
+            "existIssueNum": 1,
+            "existIssue": "4.人文关怀或沟通不到位"
+          },
+          {
+            "existIssueTotalNum": 8,
+            "existIssueNum": 1,
+            "existIssue": "2.查对漏项"
+          },
+          {
+            "existIssueTotalNum": 8,
+            "existIssueNum": 1,
+            "existIssue": "1.基础护理操作或专科护理操作流程不熟练"
+          }
+        ],
+        "operationUserId": null,
+        "operationUserOrg": null,
+        "validFlagString": null,
+        "validFlagInteger": null,
+        "updateId": null,
+        "createId": null,
+        "reduceScoreReasons": "",
+        "sort": null,
+        "scoreContents": "4.人文关怀或沟通不到位,2.查对漏项,3.无菌观念不强,1.基础护理操作或专科护理操作流程不熟练",
+        "wardNames": "结核内科三病区,消毒供应中心,心血管外科一病区",
+        "detailAttributes": null,
+        "averageScore": "94.53%",
+        "issueRate": "50.00%",
+        "patCount": null,
+        "allTimes": 8,
+        "issueTimes": 4,
+        "isTargetAssessment": null,
+        "isKeyProcess": null,
+        "isFirst": null,
+        "checkTypeName": "护理单元自查",
+        "standardCategory": "教学培训",
+        "checkStandardName": "护理教学培训考核检查记录表",
+        "checkStandardId": "91677c50da5e41e196b15bf22a71eb51",
+        "processIndexName": "培训考核",
+        "processIndexId": "c2899f0feb1e4ff7a2e7f7d9d86854bf",
+        "contentName": "4.现场查看责护一项基础护理或专科护理操作。",
+        "contentId": "239a4cb4d3a644ae94b2e2a002d67c3d"
+      }
+    ],
+    "navigatepageNums": [
+      1
+    ],
+    "total": 2,
+    "navigateLastPage": 1,
+    "navigateFirstPage": 1,
+    "navigatePages": 8,
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "isLastPage": true,
+    "isFirstPage": true,
+    "nextPage": 0,
+    "prePage": 0,
+    "pages": 1,
+    "endRow": 2,
+    "startRow": 1,
+    "size": 2,
+    "pageSize": 50,
+    "pageNum": 1
+  },
+  "data": {
+    "list": [
+      {
+        "updateTime": null,
+        "createTime": null,
+        "detailListRespDTO": null,
+        "existIssueList": [
+          {
+            "existIssueTotalNum": 193,
+            "existIssueNum": 31,
+            "existIssue": "4.人文关怀或沟通不到位"
+          },
+          {
+            "existIssueTotalNum": 193,
+            "existIssueNum": 30,
+            "existIssue": "3.无菌观念不强"
+          },
+          {
+            "existIssueTotalNum": 193,
+            "existIssueNum": 20,
+            "existIssue": "2.查对漏项"
+          },
+          {
+            "existIssueTotalNum": 193,
+            "existIssueNum": 15,
+            "existIssue": "1.基础护理操作或专科护理操作流程不熟练"
+          },
+          {
+            "existIssueTotalNum": 193,
+            "existIssueNum": 9,
+            "existIssue": "其他"
+          }
+        ],
+        "operationUserId": null,
+        "operationUserOrg": null,
+        "validFlagString": null,
+        "validFlagInteger": null,
+        "updateId": null,
+        "createId": null,
+        "reduceScoreReasons": "吸氧后人文关怀不到位,查对漏项,加药时跨越无菌区,人文关怀不到位,操作后未再次查对,皮下注射时，操作目的，操作方法，注意事项等讲解不到位,吉尔碘瓶盖使用后未扣紧,未告知患者输入药物名称及作用,37床患者手指甲长,用过的止血带在治疗盘里放着，为处理。,心肺复苏按压深度不到位。,操作流程不熟练,专科护理操作：无菌密闭静脉输液，操作中没有再次核对病人名字。,酒精过期,静脉输液时未告知患者液体的名称及作用,对患者关心不够,查对漏项，加药不全。,微量泵用药漏扫码。,查对不认真，摆药错误。,输液时消毒面积小。,吸氧观察卡未及时签名。,无菌持物筒内有两把持物钳，打包后未及时撤出一把,手卫生执行不到位，临床工作中洗手的五个时机未按照标准洗手,沾过吉尔碘的棉签未垂直使用,留置针的肝素帽连接头皮针悬挂于患者输液器装置上,吉尔碘盖子未扣紧,开启的棉签未及时填写开启日期。,吸痰前未进行沟通。,重复使用止血带,操作前未洗手,基础护理操作中成人无菌导尿中，操作中没有再次核对患者姓名,操作时无菌观念不强,未核对床头卡,扎针时消毒一次,消毒患者颈内静脉管范围不够,心电监护操作结束后人文关怀不到位。,静脉输液时有漏洗手,抽血忘记进行PDA扫码送检。,患者输液外渗沟通及人为关怀不到位。,扎针时消毒不严格,未告诉患者拔管注意事项,给患者备皮时人文关怀不到位，未注意遮挡。,沟通缺乏关怀。,语气应柔和，缓慢。,加药无菌观念不强，玻璃瓶加完药未粘贴瓶口贴,给患者静脉输液时，止血带放治疗盘里。,未核对患者姓名,未反问式核对,更换PICC无菌观念不强,沟通不到位。,未向病人解释操作目的,遵医嘱使用心电监护只反问式提问患者，未核对患者腕带信息。,人文关怀欠佳,除颤仪操作流程不熟练,操作静脉输血，无菌观念欠佳，操作中跨越无菌区,操作中解释工作不到位",
+        "sort": null,
+        "scoreContents": "2.查对漏项,3.无菌观念不强,4.人文关怀或沟通不到位,1.基础护理操作或专科护理操作流程不熟练,其他",
+        "wardNames": "结核内科三病区,胸外科一/乳腺甲状腺病区,GICU护士站,肿瘤内科病区,心血管内科六病区,结核内科五病区,CSICU病区,康复科1-2/中医科病区（南）,全科耳鼻咽喉科护士站(南),心血管外科八病区,呼吸与危重症五护士站(西),心血管内科一/二病区(南),结核内科六/危重症病区,心血管内科九/十病区,结核内科七护士站,胸外科六/胸部肿瘤科病区,介入手术室1,结核内科七病区,心血管外科一病区,全科耳鼻咽喉科病区(南),结核内科二病区,心血管外科七/十一护士站,骨科普外病区,手术部2,心血管内科一/二护士站(南),心血管内科六护士站,GICU病区,心血管外科四/九病区,呼吸与危重症五病区(西),消毒供应中心,胸外科五/微创护士站,结核内科一护士站,呼吸与危重症二护士站(西),心血管外科四/九护士站,胸外科一/乳腺甲状腺护士站,心血管外科八护士站,结核内科一病区,心血管内科一/十一病区,心血管外科七/十一病区,CCU病区,结核内科二护士站,中医科/康复医学科病区,呼吸与危重症一病区(西),结核内科六/危重症护士站,胸外科六/胸部肿瘤科护士站,内分泌消化科护士站,心血管外科二/五病区,胸外科五/微创病区,外科眼科妇科病区(南),GICU2病区,胸外科二病区,内分泌消化科病区",
+        "detailAttributes": null,
+        "averageScore": "96.05%",
+        "issueRate": "41.97%",
+        "patCount": null,
+        "allTimes": 193,
+        "issueTimes": 81,
+        "isTargetAssessment": null,
+        "isKeyProcess": null,
+        "isFirst": null,
+        "checkTypeName": "护理单元自查",
+        "standardCategory": "教学培训",
+        "checkStandardName": "护理教学培训考核检查记录表",
+        "checkStandardId": "91677c50da5e41e196b15bf22a71eb51",
+        "processIndexName": "培训考核",
+        "processIndexId": "2f5f5ef41fcc414c8d7f4767066b3437",
+        "contentName": "4.现场查看责护一项基础护理或专科护理操作。",
+        "contentId": "216c4783442f4f11ad198a4b87594040"
+      },
+      {
+        "updateTime": null,
+        "createTime": null,
+        "detailListRespDTO": null,
+        "existIssueList": [
+          {
+            "existIssueTotalNum": 8,
+            "existIssueNum": 3,
+            "existIssue": "3.无菌观念不强"
+          },
+          {
+            "existIssueTotalNum": 8,
+            "existIssueNum": 1,
+            "existIssue": "4.人文关怀或沟通不到位"
+          },
+          {
+            "existIssueTotalNum": 8,
+            "existIssueNum": 1,
+            "existIssue": "2.查对漏项"
+          },
+          {
+            "existIssueTotalNum": 8,
+            "existIssueNum": 1,
+            "existIssue": "1.基础护理操作或专科护理操作流程不熟练"
+          }
+        ],
+        "operationUserId": null,
+        "operationUserOrg": null,
+        "validFlagString": null,
+        "validFlagInteger": null,
+        "updateId": null,
+        "createId": null,
+        "reduceScoreReasons": "",
+        "sort": null,
+        "scoreContents": "4.人文关怀或沟通不到位,2.查对漏项,3.无菌观念不强,1.基础护理操作或专科护理操作流程不熟练",
+        "wardNames": "结核内科三病区,消毒供应中心,心血管外科一病区",
+        "detailAttributes": null,
+        "averageScore": "94.53%",
+        "issueRate": "50.00%",
+        "patCount": null,
+        "allTimes": 8,
+        "issueTimes": 4,
+        "isTargetAssessment": null,
+        "isKeyProcess": null,
+        "isFirst": null,
+        "checkTypeName": "护理单元自查",
+        "standardCategory": "教学培训",
+        "checkStandardName": "护理教学培训考核检查记录表",
+        "checkStandardId": "91677c50da5e41e196b15bf22a71eb51",
+        "processIndexName": "培训考核",
+        "processIndexId": "c2899f0feb1e4ff7a2e7f7d9d86854bf",
+        "contentName": "4.现场查看责护一项基础护理或专科护理操作。",
+        "contentId": "239a4cb4d3a644ae94b2e2a002d67c3d"
+      }
+    ],
+    "navigatepageNums": [
+      1
+    ],
+    "total": 2,
+    "navigateLastPage": 1,
+    "navigateFirstPage": 1,
+    "navigatePages": 8,
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "isLastPage": true,
+    "isFirstPage": true,
+    "nextPage": 0,
+    "prePage": 0,
+    "pages": 1,
+    "endRow": 2,
+    "startRow": 1,
+    "size": 2,
+    "pageSize": 50,
+    "pageNum": 1
+  },
+  "message": "操作成功",
+  "error": "SUCCESS",
+  "status": 1,
+  "resultMsg": null,
+  "errMsg": "操作成功",
+  "errCode": "SUCCESS",
+  "success": true,
+  "info": "操作成功",
+  "EWELL": {
+    "applicationName": "nursing-quality.ewell.cc",
+    "appId": "nms",
+    "directConnectDubbo": false,
+    "env": "se",
+    "webServerPort": "4001"
+  }
+}
