@@ -29,7 +29,10 @@ def t2(obj):
                     for nurseSchedule in nurseScheduleRespDTOList:
                         print(nurseSchedule)
 
-
+def t3(obj):
+    dataList = obj['dataList']
+    for data in dataList:
+        print(data)
 
 if __name__ == "__main__":
 
@@ -39,5 +42,6 @@ if __name__ == "__main__":
         jsonObj = json.loads(f.read())
 
     # t(jsonObj)
-    t2(jsonObj)
+    # t2(jsonObj)
+    t3(jsonObj)
 

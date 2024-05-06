@@ -1,0 +1,1 @@
+create view V_HLGL_TTPG as select  '24039142' PATIENT_ID,  '刘本知'  NAME,  '血液内科'  WARD_NAME,  '05'  BED_NO,  '0'  NUMBER_VALUE,  to_date('31-03-2024 15:46:44', 'dd-mm-yyyy hh24:mi:ss')  FORM_TIME from dual
