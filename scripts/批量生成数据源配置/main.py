@@ -4,18 +4,18 @@ import time
 
 if __name__ == "__main__":
 
-    mode_id = 38
-    mode_name = "血糖视图mysql数据库"
+    mode_id = 25
+    mode_name = "云在护理管理系统oracle数据库"
     mode_sql = f"INSERT INTO CT_CONNECTION_MODE (ID, CONNECTION_TYPE, CONNECTION_NAME, IS_DEFAULT, XML_CONTENT, IS_FORCED_TO_LOAD) VALUES ({mode_id}, 'db', '{mode_name}', 0, null, 0);"
     print(mode_sql, "\n")
 
-    alias = "bloodSugar"
-    driverClassName = "com.mysql.cj.jdbc.Driver"
-    url = "jdbc:mysql://127.0.0.1:32306/igmsdb?characterEncoding=UTF-8"
+    alias = "nurse"
+    driverClassName = "oracle.jdbc.OracleDriver"
+    url = "jdbc:oracle:thin:@192.168.151.114:1521/ewellpdb"
     # username = "root"
     # password = "xsj123456"
-    username = "ydhl"
-    password = "281714febbc9e701"
+    username = "hlzk"
+    password = "ewell123"
     detail_id = uuid.uuid1()
     details_sql = f"""
     INSERT INTO CT_CONNECTION_DETAILS (ID, MODE_ID, CONF_TYPE, CONF_KEY, CONF_VALUE, CONF_DESC, SEQ, IS_REQUIRED_FIELDS) VALUES ('{detail_id}', {mode_id}, 'connection-db', 'alias', '{alias}', '★数据库别名，如his,mcs,lis等(必填)(移动护理服务靠别名识别对应数据源，初始库给出的配置不要修改)', 1, 1);

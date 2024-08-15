@@ -141,6 +141,52 @@
 
 # x = "xxxx"
 # print(f"{{{x}}}")
+# print(round(1))
 
+# x = [1, 2, 3, 4]
+# for i in x:
+#     if x.index(i) > 2:
+#         print("xx", i)
 
-
+# import json
+#
+# with open("test.json", "r", encoding="utf-8") as f:
+#     resp = f.read()
+# respJson = json.loads(resp)
+# data = respJson['data']
+# num = 0
+# propertyNameList = []
+# for d in data:
+#     dossierConfigList = d['dossierConfigList']
+#     for dossierConfig in dossierConfigList:
+#         propertyName = dossierConfig['propertyName']
+#         moduleName = dossierConfig['moduleName']
+#         aliasName = dossierConfig['aliasName']
+#         configDtl = dossierConfig['configDtl']
+#         isRequired = configDtl['isRequired']
+#         if isRequired == 1:
+#             # print(moduleName, aliasName, propertyName)
+#             num = num + 1
+#             propertyNameList.append(propertyName)
+# # print(num)
+# num2 = 0
+# propertyName2List = []
+# with open("test2.json", "r", encoding="utf-8") as f:
+#     resp = f.read()
+# respJson = json.loads(resp)
+# data = respJson
+# for d in data:
+#     propertyName = d['propertyName']
+#     moduleName = d['moduleName']
+#     aliasName = d['aliasName']
+#     # print(moduleName, aliasName, propertyName)
+#     num2 = num2 + 1
+#     propertyName2List.append(propertyName)
+#
+# print(propertyNameList)
+# print(len(propertyNameList))
+# print(propertyName2List)
+# print(len(propertyName2List))
+# print([i for i in propertyNameList if i not in propertyName2List])
+import re
+print(re.findall("(\d\d\d\d-\d+-\d+ \d+:\d+:\d+\.\d+)", '2022-09-28 00:00:00.000'))
