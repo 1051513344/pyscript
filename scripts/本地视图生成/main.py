@@ -11,18 +11,18 @@ if __name__ == "__main__":
 # values ('24039142', '刘本知', '血液内科', '05', '0', to_date('31-03-2024 15:46:44', 'dd-mm-yyyy hh24:mi:ss'));"""
     with open("source.sql", "r", encoding='utf-8') as f:
         sourse = f.read()
-    virtualViewName = "v_yh_hl_education"
+    virtualViewName = "v_yh_hl_work"
     createViewSql = "create view {} as {}"
     for row in sourse.split("\n"):
         if row.startswith("INSERT INTO "):
-            column = row.replace("INSERT INTO v_yh_hl_education(", "").replace(")","").strip()
+            column = row.replace(f"INSERT INTO {virtualViewName}(", "").replace(")","").strip()
             break
     # print(column)
     columns = column.split(",")
     columnSql = ""
-    dateTimeColumn = ['start_date', 'endn_date', 'operate_time']
+    dateTimeColumn = ['birthday']
     for row in sourse.split("\n"):
-        if row.startswith(" VALUES "):
+        if row.startswith(" VALUES ") or row.startswith("VALUES "):
             columnSql = columnSql + "select "
             value = row.replace("VALUES (", "").strip()
             values = []
@@ -54,7 +54,7 @@ if __name__ == "__main__":
                             values.append(tempValue)
 
             for c,v in zip(columns, values):
-                if f'{c}'.strip() in dateTimeColumn:
+                if (f'{c}'.strip() in dateTimeColumn or f'{c}'.strip().endswith("_date") or f'{c}'.strip().endswith("_time")) and 'CAST' not in v:
                     # sqlServer日期格式
                     columnSql = columnSql + f" CAST({v} AS DATETIME) {c},"
                 else:
