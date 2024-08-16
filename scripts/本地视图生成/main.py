@@ -11,7 +11,7 @@ if __name__ == "__main__":
 # values ('24039142', '刘本知', '血液内科', '05', '0', to_date('31-03-2024 15:46:44', 'dd-mm-yyyy hh24:mi:ss'));"""
     with open("source.sql", "r", encoding='utf-8') as f:
         sourse = f.read()
-    virtualViewName = "v_yh_hl_work"
+    virtualViewName = "v_yh_hl_title"
     createViewSql = "create view {} as {}"
     for row in sourse.split("\n"):
         if row.startswith("INSERT INTO "):
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # print(column)
     columns = column.split(",")
     columnSql = ""
-    dateTimeColumn = ['birthday']
+    dateTimeColumn = ['term_of_validity']
     for row in sourse.split("\n"):
         if row.startswith(" VALUES ") or row.startswith("VALUES "):
             columnSql = columnSql + "select "
