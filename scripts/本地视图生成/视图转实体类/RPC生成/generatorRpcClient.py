@@ -2,7 +2,7 @@
 
 if __name__ == "__main__":
 
-    className = "Work"
+    className = "Duty"
 
     rpcClientModel = """package com.bozhong.nursetransfer.service;
 
@@ -27,5 +27,5 @@ public class {className}ReadServiceRPCClient implements {className}ReadServiceRP
     {close}
 
 {close}""".format(className=className, classLowerName=className[0].lower()+className[1:], open="{", close="}")
-    with open(f"{className}ReadServiceRPC.java", "w", encoding='utf-8') as f:
+    with open(f"{className}ReadServiceRPCClient.java", "w", encoding='utf-8') as f:
         f.write(rpcClientModel)

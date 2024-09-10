@@ -1,66 +1,78 @@
-package com.bozhong.nursestaff.dto.basics.request;
+package com.bozhong.schedule.dto.schedule.request;
 
 import java.util.Date;
-import com.bozhong.nursestaff.dto.BaseReqDto;
 import lombok.Getter;
 import lombok.Setter;
+import com.bozhong.schedule.dto.BaseReqDTO;
 
 /**
 * @author 徐顺洁
-* @since 2024-08-13 15:54:56
+* @since 2024-08-26 13:41:20
 */
 @Getter
 @Setter
-public class NurseDossierApplyReqDTO extends BaseReqDto {
+public class ScheduleShiftAuditRecordReqDTO extends BaseReqDTO {
 
 
     private String id;
     /**
-     * 工号
+     * 护士ID
+     */
+    private String nurseId;
+    /**
+     * 护士工号
      */
     private String jobNumber;
     /**
-     * 姓名
+     * 护士姓名
      */
     private String name;
     /**
-     * 性别
+     * 病区ID
      */
-    private String sex;
+    private String unitId;
     /**
-     * 手机号
+     * 解除开始日期
      */
-    private String mobile;
+    private Date startTime;
     /**
-     * 审核状态 0：待审核 1：通过 2：不通过
+     * 解除结束日期
      */
-    private String status;
+    private Date endTime;
     /**
-     * 申请时间
+     * 理由
      */
-    private Date applyTime;
+    private String reason;
+    /**
+     * 审核状态：0：默认待审核 1：通过 2：不通过
+     */
+    private Integer auditStatus;
     /**
      * 审核人ID
      */
     private String auditId;
     /**
-     * 审核人
+     * 审核人姓名
      */
-    private String auditName;
+    private String auditBy;
     /**
      * 审核时间
      */
     private Date auditTime;
     /**
-     * 创建人ID
+     * 调动类型
+     */
+    private Integer shiftType;
+    /**
+     * 申请者ID
      */
     private String createId;
     /**
-     * 创建人
+     * 申请者
      */
-    private String createName;
+    private String createBy;
     /**
-     * 创建时间
+     * 申请时间
      */
     private Date createTime;
     /**
@@ -68,21 +80,23 @@ public class NurseDossierApplyReqDTO extends BaseReqDto {
      */
     private String updateId;
     /**
-     * 更新人
+     * 更新人姓名
      */
-    private String updateName;
+    private String updateBy;
     /**
      * 更新时间
      */
     private Date updateTime;
+
+    private Integer validFlag;
 
     private Integer pageNum;
 
     private Integer pageSize;
 
     @Override
-    public String paramValidation() {
-        return null;
+    public void validation() {
+
     }
 }
 

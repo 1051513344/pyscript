@@ -3,18 +3,11 @@ from scripts.util import convertUtil
 columns = """
 id
 job_number
-education
-education_number
-education_type
-start_date
-endn_date
-school
-major
-education_degree
-education_degree_num
-education_date
-url
-degree_url
+name
+code
+unit_id
+issue_date
+remark
 operate_time
 """
 
@@ -23,7 +16,7 @@ operate_time
 
 if __name__ == "__main__":
 
-    className = "Education"
+    className = "Duty"
 
     columns = [i for i in columns.split("\n") if i != ""]
 

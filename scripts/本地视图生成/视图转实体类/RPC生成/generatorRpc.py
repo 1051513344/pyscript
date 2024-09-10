@@ -2,7 +2,7 @@
 
 if __name__ == "__main__":
 
-    className = "Work"
+    className = "Duty"
 
     rpcModel = """package com.bozhong.nursetransfer.service;
 

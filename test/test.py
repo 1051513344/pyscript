@@ -189,4 +189,63 @@
 # print(len(propertyName2List))
 # print([i for i in propertyNameList if i not in propertyName2List])
 import re
-print(re.findall("(\d\d\d\d-\d+-\d+ \d+:\d+:\d+\.\d+)", '2022-09-28 00:00:00.000'))
+import time
+
+# print(re.findall("(\d\d\d\d-\d+-\d+ \d+:\d+:\d+\.\d+)", '2022-09-28 00:00:00.000'))
+
+RM = """        <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="NURSE_ID" jdbcType="VARCHAR" property="nurseId" />
+    <result column="AUDIT_STATUS" jdbcType="DECIMAL" property="auditStatus" />
+    <result column="TITLE" jdbcType="VARCHAR" property="title" />
+    <result column="AUTHOR" jdbcType="VARCHAR" property="author" />
+    <result column="PUBLISH_DATE" jdbcType="TIMESTAMP" property="publishDate" />
+    <result column="ARTICLE_LEVEL" jdbcType="VARCHAR" property="articleLevel" />
+    <result column="PERIODICAL" jdbcType="VARCHAR" property="periodical" />
+    <result column="YEAR" jdbcType="DECIMAL" property="year" />
+    <result column="UNIT_ID" jdbcType="VARCHAR" property="unitId" />
+    <result column="URL" jdbcType="VARCHAR" property="url" />
+    <result column="AUTHOR_UNIT" jdbcType="VARCHAR" property="authorUnit" />
+    <result column="AUTHOR_TITLE" jdbcType="VARCHAR" property="authorTitle" />
+    <result column="AUTHOR_LEVEL" jdbcType="VARCHAR" property="authorLevel" />
+    <result column="EDIT_STATUS" jdbcType="VARCHAR" property="editStatus" />
+    <result column="VALID_FLAG" jdbcType="DECIMAL" property="validFlag" />
+    <result column="CREATE_ID" jdbcType="VARCHAR" property="createId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_ID" jdbcType="VARCHAR" property="updateId" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />"""
+sql = ""
+for i in re.findall("column=\"(.*?)\" .*", RM):
+    sql = sql + i+", "
+# print(sql)
+
+
+blockIds = """INSERT INTO MY_TABLE(ID) VALUES ('c398a58717c74226be88c7c67591798e');
+INSERT INTO MY_TABLE(ID) VALUES ('633ed888c4864948b968764bcab5256d');
+INSERT INTO MY_TABLE(ID) VALUES ('1121a6df7fbd4a328b4fa28ba268d978');
+INSERT INTO MY_TABLE(ID) VALUES ('d878f221a9a5415785c80e78409e741e');
+INSERT INTO MY_TABLE(ID) VALUES ('5e0a7883e4ad48118c430e5fca6208e7');
+INSERT INTO MY_TABLE(ID) VALUES ('a4c588c4b25c47929be2d2537b63f96d');
+INSERT INTO MY_TABLE(ID) VALUES ('123dbc3e3b9449b2bedfcdc5706a1787');
+INSERT INTO MY_TABLE(ID) VALUES ('3e0aa006cff24050a2f35eea9b10d91a');
+INSERT INTO MY_TABLE(ID) VALUES ('98dbb63a20ca4eac8b0c9143042d8530');
+INSERT INTO MY_TABLE(ID) VALUES ('151e2fe200f44ef69fa991ffdb3b13d3');
+INSERT INTO MY_TABLE(ID) VALUES ('894bca29b3284ea1b130968d1f8387b2');"""
+
+# for i in re.findall("VALUES \\('(.*?)'\\)", blockIds):
+#     print(i)
+import uuid
+# for i in ('a9184b5cd4e14ea7ab1d64c863df293b', '7d1967f8635a48e6ba8c36edba3f006b', '9602b6a5cd0c4cd0b978af5bfcd143fe', '00f46dfc1a0144c88034c26b698ca07b'):
+#     for j in re.findall("VALUES \\('(.*?)'\\)", blockIds):
+#         id = str(uuid.uuid4()).replace("-", "")
+#         time.sleep(0.3)
+#         print(f"INSERT INTO NURSE_CONFIG_NQA_BLOCK_MAP (ID, BLOCK_ID, NQA_GROUP_ID, SORT, REMARK, VALID_FLAG, CREATE_TIME, CREATE_ID, UPDATE_TIME, UPDATE_ID) VALUES ('{id}', '{j}', '{i}', null, null, 1, TO_DATE('2024-09-09 16:56:39', 'YYYY-MM-DD HH24:MI:SS'), 'SINCE20211110', TO_DATE('2024-09-09 16:56:39', 'YYYY-MM-DD HH24:MI:SS'), 'SINCE20211110');")
+
+#
+# for i in ('a9184b5cd4e14ea7ab1d64c863df293b', '7d1967f8635a48e6ba8c36edba3f006b', '9602b6a5cd0c4cd0b978af5bfcd143fe', '00f46dfc1a0144c88034c26b698ca07b'):
+#     id = str(uuid.uuid4()).replace("-", "")
+#     time.sleep(0.3)
+#     print(f"INSERT INTO NURSE_CONFIG_NQA_BLOCK_MAP (ID, BLOCK_ID, NQA_GROUP_ID, SORT, REMARK, VALID_FLAG, CREATE_TIME, CREATE_ID, UPDATE_TIME, UPDATE_ID) VALUES ('{id}', '3b847a3e2184419e95d1ac951f96d3c2', '{i}', null, null, 1, TO_DATE('2024-09-09 16:56:39', 'YYYY-MM-DD HH24:MI:SS'), 'SINCE20211110', TO_DATE('2024-09-09 16:56:39', 'YYYY-MM-DD HH24:MI:SS'), 'SINCE20211110');")
+#
+
+
+print("province".upper())
