@@ -20,15 +20,15 @@ def getTruckFreight(distance, tolls, pathNum):
     initFee = 150
     totalFee = initFee
     if distance <= 20:
-        totalFee = totalFee + tolls
+        totalFee = totalFee + tolls*2
         totalFee = totalFee + pathNum*50
     if distance > 20 and distance <= 200:
-        totalFee = totalFee + (distance-20)*2.25
-        totalFee = totalFee + tolls
+        totalFee = totalFee + (distance*2-20)*2.25
+        totalFee = totalFee + tolls*2
         totalFee = totalFee + pathNum*50
     if distance > 200:
-        totalFee = totalFee + (distance-20)*2.25
-        totalFee = totalFee + tolls
+        totalFee = totalFee + (distance*2-20)*2.25
+        totalFee = totalFee + tolls*2
         totalFee = totalFee + pathNum*50
     return totalFee
 def getFreightFormula(distance, tolls, pathNum):
@@ -41,22 +41,22 @@ def getFreightFormula(distance, tolls, pathNum):
     result = str(initFee)
     totalFee = initFee
     if distance <= 20:
-        totalFee = totalFee + tolls
-        result = result + " + " + f'{tolls}'
+        totalFee = totalFee + tolls*2
+        result = result + " + " + f'{tolls}*2'
         totalFee = totalFee + pathNum*50
         result = result + " + " + f'{pathNum}*50'
     if distance > 20 and distance <= 200:
-        totalFee = totalFee + (distance-20)*2.25
-        result = result + " + " + f'({distance}-20)*2.25'
-        totalFee = totalFee + tolls
-        result = result + " + " + f'{tolls}'
+        totalFee = totalFee + (distance*2-20)*2.25
+        result = result + " + " + f'({distance}*2-20)*2.25'
+        totalFee = totalFee + tolls*2
+        result = result + " + " + f'{tolls}*2'
         totalFee = totalFee + pathNum*50
         result = result + " + " + f'{pathNum}*50'
     if distance > 200:
-        totalFee = totalFee + (distance-20)*2.25
-        result = result + " + " + f'({distance}-20)*2.25'
-        totalFee = totalFee + tolls
-        result = result + " + " + f'{tolls}'
+        totalFee = totalFee + (distance*2-20)*2.25
+        result = result + " + " + f'({distance}*2-20)*2.25'
+        totalFee = totalFee + tolls*2
+        result = result + " + " + f'{tolls}*2'
         totalFee = totalFee + pathNum*50
         result = result + " + " + f'{pathNum}*50'
     return result + " = " + str(round(totalFee, 2))
@@ -74,16 +74,16 @@ def getTruckFreight(distance, tolls, pathNum):
     initFee = 300
     totalFee = initFee
     if distance <= 20:
-        totalFee = totalFee + tolls
+        totalFee = totalFee + tolls*2
         totalFee = totalFee + pathNum*50
     if distance > 20 and distance <= 200:
-        totalFee = totalFee + (distance-20)*3.1
-        totalFee = totalFee + tolls
+        totalFee = totalFee + (distance*2-20)*3.1
+        totalFee = totalFee + tolls*2
         totalFee = totalFee + pathNum*50
     if distance > 200:
         totalFee = totalFee + (200-20)*3.1
-        totalFee = totalFee + (distance-200)*1.7
-        totalFee = totalFee + tolls
+        totalFee = totalFee + (distance*2-200)*1.7
+        totalFee = totalFee + tolls*2
         totalFee = totalFee + pathNum*50
     return totalFee
 def getFreightFormula(distance, tolls, pathNum):
@@ -96,24 +96,24 @@ def getFreightFormula(distance, tolls, pathNum):
     result = str(initFee)
     totalFee = initFee
     if distance <= 20:
-        totalFee = totalFee + tolls
-        result = result + " + " + f'{tolls}'
+        totalFee = totalFee + tolls*2
+        result = result + " + " + f'{tolls}*2'
         totalFee = totalFee + pathNum*50
         result = result + " + " + f'{pathNum}*50'
     if distance > 20 and distance <= 200:
-        totalFee = totalFee + (distance-20)*3.1
-        result = result + " + " + f'({distance}-20)*3.1'
-        totalFee = totalFee + tolls
-        result = result + " + " + f'{tolls}'
+        totalFee = totalFee + (distance*2-20)*3.1
+        result = result + " + " + f'({distance}*2-20)*3.1'
+        totalFee = totalFee + tolls*2
+        result = result + " + " + f'{tolls}*2'
         totalFee = totalFee + pathNum*50
         result = result + " + " + f'{pathNum}*50'
     if distance > 200:
         totalFee = totalFee + (200-20)*3.1
         result = result + " + " + f'(200-20)*3.1'
-        totalFee = totalFee + (distance-200)*1.7
-        result = result + " + " + f'({distance}-200)*1.7'
-        totalFee = totalFee + tolls
-        result = result + " + " + f'{tolls}'
+        totalFee = totalFee + (distance*2-200)*1.7
+        result = result + " + " + f'({distance}*2-200)*1.7'
+        totalFee = totalFee + tolls*2
+        result = result + " + " + f'{tolls}*2'
         totalFee = totalFee + pathNum*50
         result = result + " + " + f'{pathNum}*50'
     return result + " = " + str(round(totalFee, 2))
@@ -133,13 +133,13 @@ def getTruckFreight(distance, tolls, pathNum):
     if distance <= 40:
         pass
     if distance > 40 and distance <= 200:
-        totalFee = totalFee + (distance-40)*2.75
-        totalFee = totalFee + tolls
+        totalFee = totalFee + (distance*2-40)*2.75
+        totalFee = totalFee + tolls*2
         totalFee = totalFee + pathNum*50
     if distance > 200:
         totalFee = totalFee + (200-40)*2.75
-        totalFee = totalFee + (distance-200)*2
-        totalFee = totalFee + tolls
+        totalFee = totalFee + (distance*2-200)*2
+        totalFee = totalFee + tolls*2
         totalFee = totalFee + pathNum*50
     return totalFee
 def getFreightFormula(distance, tolls, pathNum):
@@ -154,19 +154,19 @@ def getFreightFormula(distance, tolls, pathNum):
     if distance <= 40:
         pass
     if distance > 40 and distance <= 200:
-        totalFee = totalFee + (distance-40)*2.75
-        result = result + " + " + f'({distance}-40)*2.75'
-        totalFee = totalFee + tolls
-        result = result + " + " + f'{tolls}'
+        totalFee = totalFee + (distance*2-40)*2.75
+        result = result + " + " + f'({distance}*2-40)*2.75'
+        totalFee = totalFee + tolls*2
+        result = result + " + " + f'{tolls}*2'
         totalFee = totalFee + pathNum*50
         result = result + " + " + f'{pathNum}*50'
     if distance > 200:
         totalFee = totalFee + (200-40)*2.75
         result = result + " + " + f'(200-40)*2.75'
-        totalFee = totalFee + (distance-200)*2
-        result = result + " + " + f'({distance}-200)*2'
-        totalFee = totalFee + tolls
-        result = result + " + " + f'{tolls}'
+        totalFee = totalFee + (distance*2-200)*2
+        result = result + " + " + f'({distance}*2-200)*2'
+        totalFee = totalFee + tolls*2
+        result = result + " + " + f'{tolls}*2'
         totalFee = totalFee + pathNum*50
         result = result + " + " + f'{pathNum}*50'
     return result + " = " + str(round(totalFee, 2))
@@ -204,7 +204,7 @@ def getData():
         df = pd.read_excel(xls, "202407241910000340")
         for row_index, row in df.iterrows():
             # print(row, sep='\n')
-            truckLength = re.findall("(\d+?.?\d+).*?米", row[13])
+            truckLength = re.findall("(\d+?.\d+).*?米", row[13])
             if len(truckLength) > 0:
                 truckLength = truckLength[0]
                 distance = re.findall("距离（(.*?)公里.*）", row[13])
