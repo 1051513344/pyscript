@@ -4,23 +4,32 @@ import time
 def main():
     openTask()
     start = 0
-    for task in range(start, 20):
-        pydirectinput.mouseDown(x=650, y=365+task*21)
-        pydirectinput.mouseUp(x=650, y=365+task*21)
-        time.sleep(0.3)
-        pydirectinput.click(button='right')
-        if task < 16:
-            pydirectinput.mouseDown(x=700, y=365+task*21+130)
-            pydirectinput.mouseUp(x=700, y=365+task*21+130)
-        else:
-            pydirectinput.mouseDown(x=700, y=365+16*21+120)
-            pydirectinput.mouseUp(x=700, y=365+16*21+120)
-        if task == start:
-            tab(2)
-        else:
-            tab(1)
-        copyTaskContent()
+    end = 14
+    bottomTask = [11, 13]
+    for task in range(start, end):
+        if task+1 in bottomTask:
+            continue
+        execute(task, start)
+    for task in bottomTask:
+        execute(task-1, -1)
+
+def execute(task, start):
+    pydirectinput.mouseDown(x=650, y=365+task*21)
+    pydirectinput.mouseUp(x=650, y=365+task*21)
+    time.sleep(0.3)
+    pydirectinput.click(button='right')
+    if task < 16:
+        pydirectinput.mouseDown(x=700, y=365+task*21+130)
+        pydirectinput.mouseUp(x=700, y=365+task*21+130)
+    else:
+        pydirectinput.mouseDown(x=700, y=365+16*21+120)
+        pydirectinput.mouseUp(x=700, y=365+16*21+120)
+    if task == start:
+        tab(2)
+    else:
         tab(1)
+    copyTaskContent()
+    tab(1)
 
 def openTask():
     tab(1)
